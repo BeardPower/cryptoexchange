@@ -11,7 +11,7 @@ module Cryptoexchange::Exchanges
 
         def adapt(output)
           output['ticker'].map do |pair, ticker|
-            target, base = pair.split('_')
+            base, target = pair.split('_')
             Cryptoexchange::Models::MarketPair.new(
               base:   base,
               target: target,
